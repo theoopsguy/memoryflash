@@ -6,8 +6,23 @@ body {
 #level-title {
   font-family: serif;
   font-size: 2.5rem;
-  margin:  5% auto 5%;
+  margin:  5% auto;
   color: #FEF2BF;
+}
+
+#startbtn {
+  background-color: #04AA6D;
+  border: none;
+  color: #FEF2BF;
+  padding: 1% 2%;
+  font-size: 2rem;
+  border-radius: 5%;
+  margin:  0 auto 3.75%;
+  cursor: pointer;
+}
+
+#startbtn:hover {
+  background-color: #3e8e41;
 }
 
 .container {
@@ -87,4 +102,15 @@ body {
 /* Change the background color of the dropdown button when the dropdown content is shown */
 .dropdown:hover .dropbtn {
   background-color: #3e8e41;
+}
+
+@media (max-width: 1028px) {
+
+  #level-title {
+    margin: 21% auto;
+  }
+
+  #startbtn {
+    margin: 10% auto;
+  }
 }

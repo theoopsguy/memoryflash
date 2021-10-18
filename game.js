@@ -1,16 +1,12 @@
 var buttonColors = ["red", "blue", "green", "yellow"];
 var gamePattern = [];
 var userClickedPattern = [];
-var started = false;
 var level = 0;
 
 //Starting Game
-$("body").on('keypress', function(){
-    if (started == false){
-        $("#level-title").text("Level " + level);
-        nextSequence();
-        started = true;
-    }
+$("#startbtn").on ("click", function startGame(){
+    $("#startbtn").hide();
+    nextSequence();
 });
 
 //Generating Pattern
@@ -69,17 +65,18 @@ function checkAnswer(currentLevel){
     else{
         playSound("wrong");
         $("body").addClass("game-over");
-        $("#level-title").text("Game Over, Press Any Key to Restart");
+        $("#level-title").text("Game Over");
         setTimeout(function(){
             $("body").removeClass("game-over");
-        }, 200);
-        startOver();
+            startOver();
+        }, 700);
     }
 }
 
 //Game Restart
 function startOver(){
     gamePattern = [];
-    started = false;
     level = 0;
+    $("#level-title").text("");
+    $("#startbtn").show();
 }
