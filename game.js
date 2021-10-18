@@ -2,6 +2,7 @@ var buttonColors = ["red", "blue", "green", "yellow"];
 var gamePattern = [];
 var userClickedPattern = [];
 var level = 0;
+var hiScore = 0;
 
 //Starting Game
 $("#startbtn").on ("click", function startGame(){
@@ -56,6 +57,12 @@ function animatePress(currentColor){
 function checkAnswer(currentLevel){
     if (userClickedPattern[currentLevel] == gamePattern[currentLevel]){
         if (userClickedPattern.length == gamePattern.length){
+            if (level > hiScore){
+                hiScore = level;
+            }
+            
+            $(".score").text("Hi-Score: " + hiScore);
+
             setTimeout(function(){
                 nextSequence();
             }, 1000);
